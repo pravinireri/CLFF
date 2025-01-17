@@ -31,8 +31,8 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background: rgba(255, 255, 255, 0.1); /* Transparent background */
-    backdrop-filter: blur(5px); /* Blur effect */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
     position: fixed;
     width: 100%;
     top: 0;
@@ -118,7 +118,7 @@ a {
 .join-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #8bc34a; /* Bright green */
+    background-color: #8bc34a;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -137,7 +137,6 @@ a {
     position: relative;
     padding: 120px 20px;
     text-align: center;
-    margin-left: -50px;
     background-color: var(--off-white);
 }
 
@@ -164,6 +163,10 @@ a {
     width: 250px;
     transition: transform 0.3s ease, color 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-end;
 }
 
 .card:hover {
@@ -177,6 +180,7 @@ a {
     border-radius: 50px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    margin-bottom: 15px;
 }
 
 .card:hover img {
@@ -192,4 +196,119 @@ a {
 
 .card:hover h3 {
     color: var(--green-color);
+}
+
+/* Section 3: About */
+
+.section.about {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .about-banner {
+    flex: 1;
+  }
+  
+  .img-holder {
+    position: relative;
+  }
+  
+  .img-cover {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .about-content {
+    flex: 1;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .section-subtitle {
+    color: #6ab04c;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 1.1em;
+  }
+  
+  .section-title {
+    font-size: 4.6rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+  
+  .section-text {
+    position: relative;
+    padding-left: 20px;
+    border-left: 4px solid #6ab04c;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.35em;
+  }
+  
+  .span {
+    display: block;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.15em;
+  }
+  
+  .about-author {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .author-card {
+    margin-top: 10px;
+  }
+  
+  .author-title {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .author-subtitle {
+    color: #666;
+    font-size: 1.15rem;
+    font-style: italic;
+  }
+
+/* Section 4: Latest Message */
+
+.latest-message {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--off-white);
+    margin-top: 30px;
+}
+
+.latest-message h2 {
+    font-size: 2rem;
+    color: var(--background-color);
+    margin-bottom: 20px;
+}
+
+#latest-video iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 340px;
+    border: none;
+    border-radius: 10px;
 }

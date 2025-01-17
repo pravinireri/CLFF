@@ -131,72 +131,81 @@ a {
     border-radius: 5px;
 }
 
-/* Section 2: Cards */
+/* Section 5: Info */
 
-.cards-section {
-    position: relative;
-    padding: 120px 20px;
-    text-align: center;
-    background-color: var(--off-white);
-}
-
-.cards-section .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    background: linear-gradient(180deg, var(--off-white) 70%, #ffffff 30%);
-    z-index: -1;
-}
-
-.cards-container {
+.service-info-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 200px;
-    flex-wrap: wrap;
-}
-
-.card {
-    text-align: center;
-    width: 250px;
-    transition: transform 0.3s ease, color 0.3s ease;
-    cursor: pointer;
+    padding: 80px; /* Double the padding for larger size */
+    gap: 40px; /* Double the gap between sections */
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .service-info-card,
+  .service-times-card {
+    padding: 40px; /* Double the padding for larger size */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 650px; /* Double the width for larger size */
+    height: 400px; /* Fixed height to ensure equal size */
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: flex-end;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card img {
-    width: 320px;
-    height: 520px;
-    object-fit: cover;
-    border-radius: 50px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    margin-bottom: 15px;
-}
-
-.card:hover img {
-    transform: scale(1.05);
-}
-
-.card h3 {
-    margin-top: 15px;
-    font-size: 20px;
-    color: var(--background-color);
-    transition: color 0.3s ease;
-}
-
-.card:hover h3 {
-    color: var(--green-color);
-}
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .service-info-card {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 40px -50px;
+    width: 460px;
+  }
+  
+  .service-info-title {
+    margin: 0 0 20px; /* Increased spacing */
+    font-size: 50px; /* Larger font */
+    line-height: 1;
+  }
+  
+  .service-info-address {
+    margin: 10px 0;
+    font-size: 20px; /* Larger font */
+    font-weight: bold;
+  }
+  
+  .service-times-card {
+    background-color: white;
+    color: #333;
+    border: 2px solid #e0e0e0;
+    position: relative;
+  }
+  
+  .service-times-title {
+    margin: 0 0 20px;
+    font-size: 50px; /* Larger font */
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .service-times-content p {
+    margin: 15px 0;
+    font-size: 20px; /* Larger font */
+    font-weight: 200;
+  }
+  
+  .service-time {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .divider-line {
+    width: 100%;
+    height: 2px; /* Match the height of the cards */
+    background-color: #28a745;
+  }
 
 /* Section 3: About */
 
@@ -288,9 +297,76 @@ a {
     color: #666;
     font-size: 1.15rem;
     font-style: italic;
-  }
+  }  
 
-/* Section 4: Latest Message */
+/* Section 4: Cards */
+
+.cards-section {
+    position: relative;
+    padding: 120px 20px;
+    text-align: center;
+    background-color: var(--off-white);
+}
+
+.cards-section .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(180deg, var(--off-white) 70%, #ffffff 30%);
+    z-index: -1;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+    flex-wrap: wrap;
+}
+
+.card {
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-end;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 320px;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    margin-top: 15px;
+    font-size: 20px;
+    color: var(--background-color);
+    transition: color 0.3s ease;
+}
+
+.card:hover h3 {
+    color: var(--green-color);
+}
+
+/* Section 5: Latest Message */
 
 .latest-message {
     text-align: center;
@@ -311,4 +387,113 @@ a {
     height: 340px;
     border: none;
     border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .menu a {
+        display: none;
+    }
+
+    /* Hero Section */
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .text-section h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .text-section p {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .join-button {
+        margin: 20px auto;
+    }
+
+    .image-section img {
+        display: none;
+    }
+
+    /* Service Info Section */
+    .service-info-section {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .service-info-card,
+    .service-times-card {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .service-times-card {
+        padding: 200px 20px;
+        line-height: 1;
+    }
+
+    /* About Section */
+    
+    .section.about {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .about-banner img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 20px;
+    }
+
+    .about-content {
+        padding-left: 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-text {
+        font-size: 1rem;
+    }
+
+    /* Cards Section */
+    .cards-container {
+        gap: 20px;
+        flex-direction: column;
+        margin-bottom: -100px;
+    }
+
+    .card img {
+        width: 100%;
+        max-width: 300px;
+        height: 250px;
+    }
+
+    /* Latest Message Section */
+    .latest-message h2 {
+        font-size: 1.5rem;
+    }
+
+    #latest-video iframe {
+        width: 100%;
+        height: 200px;
+    }
 }

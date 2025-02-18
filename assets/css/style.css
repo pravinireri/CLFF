@@ -506,6 +506,23 @@ footer {
         line-height: 1;
     }
 
+    .service-info-title {
+      font-size: 40px;
+    }
+    
+    .service-info-address {
+      font-size: 20px;
+    }
+
+    .service-times-title {
+      font-size: 40px; 
+    }
+    
+    .service-times-content p {
+      font-size: 20px; 
+      text-align: center;
+    }
+
     /* About Section */
     
     .section.about {

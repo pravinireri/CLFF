@@ -529,64 +529,291 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .container {
-      flex-direction: column;
-      text-align: center;
-      padding: 60px 20px;
-  }
-
-  .text-section {
-      max-width: 100%;
-  }
-
-  .text-section h1 {
-      font-size: 1.8rem;
+    padding: 80px 50px;
   }
 
   .text-section h2 {
-      font-size: 2.5rem;
-  }
-
-  .image-section img {
-      width: 100%;
-      max-width: 300px;
-      margin-top: 30px;
-  }
-
-  .service-info-section {
-      flex-direction: column;
-      padding: 40px 20px;
-  }
-
-  .service-info-card,
-  .service-times-card {
-      padding: 30px;
+    font-size: 3rem;
   }
 
   .service-info-title,
   .service-times-title {
-      font-size: 2rem;
-  }
-
-  .section.about {
-      padding: 60px 20px;
+    font-size: 2.2rem;
   }
 
   .section-title {
-      font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .books-section h2,
+  .latest-message h2 {
+    font-size: 2.2rem;
+  }
+
+  .left-image,
+  .right-image {
+    object-position: -200px center;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .menu {
+    gap: 15px;
+  }
+
+  .container {
+    padding: 60px 30px;
+  }
+
+  .text-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .service-info-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .service-info-card,
+  .service-times-card {
+    max-width: 100%;
+  }
+
+  .section.about {
+    padding: 80px 20px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-content {
+    padding: 0 20px;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .latest-message {
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .social-icons {
+    margin-top: 15px;
+  }
+
+  .container {
+    padding: 50px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-section {
+    max-width: 100%;
+  }
+
+  .text-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-section h2 {
+    font-size: 2rem;
+  }
+
+  .image-section img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 30px;
+  }
+
+  .service-info-section {
+    padding: 40px 20px;
+  }
+
+  .service-info-card,
+  .service-times-card {
+    padding: 20px;
+  }
+
+  .service-info-title,
+  .service-times-title {
+    font-size: 1.8rem;
+  }
+
+  .section.about {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
   }
 
   .books-section,
   .latest-message {
-      padding: 60px 20px;
+    padding: 50px 20px;
   }
 
+  .books-section h2,
   .latest-message h2 {
-      font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .flip-card {
+    width: 100%;
+  }
+
+  .flip-card-inner {
+    width: 100%;
+    height: 300px;
   }
 
   #latest-video iframe {
-      height: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .menu a {
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 40px 15px;
+  }
+
+  .text-section h1 {
+    font-size: 1.2rem;
+  }
+
+  .text-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .text-section p {
+    font-size: 1rem;
+  }
+
+  .join-button {
+    padding: 10px 20px;
+  }
+
+  .service-info-section {
+    padding: 30px 15px;
+  }
+
+  .service-info-card,
+  .service-times-card {
+    padding: 15px;
+  }
+
+  .service-info-title,
+  .service-times-title {
+    font-size: 1.5rem;
+  }
+
+  .section.about {
+    padding: 50px 15px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .books-section,
+  .latest-message {
+    padding: 40px 15px;
+  }
+
+  .books-section h2,
+  .latest-message h2 {
+    font-size: 1.5rem;
+  }
+
+  .flip-card-inner {
+    height: 250px;
+  }
+
+  .app-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .app-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  #latest-video iframe {
+    height: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  .text-section h1 {
+    font-size: 1rem;
+  }
+
+  .text-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .text-section p {
+    font-size: 0.9rem;
+  }
+
+  .service-info-title,
+  .service-times-title {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .books-section h2,
+  .latest-message h2 {
+    font-size: 1.2rem;
+  }
+
+  .flip-card-inner {
+    height: 200px;
+  }
+
+  #latest-video iframe {
+    height: 150px;
   }
 }

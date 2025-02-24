@@ -248,10 +248,11 @@ a {
 
 /* Section 3: About */
 .section.about {
-  padding: 70px 30px;
+  padding: 100px 30px;
   background-color: var(--off-white);
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .about-container {
@@ -267,12 +268,13 @@ a {
   flex: 1;
   position: relative;
   text-align: center;
+  max-width: 400px;
 }
 
 .left-image,
 .right-image {
-  width: 300px;
-  height: 400px;
+  width: 100%;
+  height: auto;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -285,38 +287,55 @@ a {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
 .about-content {
   flex: 2;
   text-align: center;
   padding: 0 40px;
+  max-width: 600px;
 }
 
 .section-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--blue-color);
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 15px;
+  letter-spacing: 1px;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 25px;
-  color: var(--background-color); 
+  color: var(--background-color);
+  line-height: 1.2;
 }
 
 .section-text {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #555;
   margin-bottom: 25px;
   line-height: 1.8;
 }
 
+.span {
+  font-size: 1.1rem;
+  color: #777;
+  line-height: 1.8;
+  display: block;
+}
+
 .author-info {
   margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -325,13 +344,14 @@ a {
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
+  backdrop-filter: blur(5px);
 }
 
 .author-title {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--background-color);
-  margin-bottom: -2px;
+  margin-bottom: 5px;
 }
 
 .author-subtitle {
@@ -346,6 +366,7 @@ a {
   padding: 80px 30px;
   background-color: #fff;
   text-align: center;
+  overflow: hidden;
 }
 
 .books-section h2 {
@@ -366,6 +387,10 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-bottom: 30px;
+
+  display: flex;
+  width: max-content;
+  animation: scrollBooks 20s linear infinite; 
 }
 
 .flip-card {
@@ -376,6 +401,12 @@ a {
   justify-content: center;
   align-items: center;
   perspective: 1000px;
+}
+
+.books-grid .flip-card {
+  flex: 0 0 auto;
+  width: 250px;
+  margin-right: 20px;
 }
 
 .flip-card-inner {
@@ -447,6 +478,15 @@ a {
 
 .app-link:hover {
   background-color: #0066cc;
+}
+
+@keyframes scrollBooks {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Section 5: Latest Message */
@@ -862,3 +902,4 @@ footer {
   /* FOOTER */
   
 }
+

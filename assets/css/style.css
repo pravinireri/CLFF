@@ -196,7 +196,7 @@ a {
   width: 100%;
   height: 335px;
   object-fit: cover;
-  object-position: center -20px;
+  object-position: center -50px -20px;
   border-radius: 0 0 10px 10px;
 }
 
@@ -248,7 +248,7 @@ a {
 
 /* Section 3: About */
 .section.about {
-  padding: 100px 30px;
+  padding: 70px 30px;
   background-color: var(--off-white);
   display: flex;
   align-items: center;
@@ -783,26 +783,68 @@ footer {
 }
 
 @media (max-width: 400px) {
+
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+  
+  .menu a {
+    display: none;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+    margin: 0 auto;
+    margin-top: -10px;
+    margin-right: 6px;
+  }
+
+  /* Section 1: Hero */
+
   .text-section h1 {
-    font-size: 1rem;
+    font-size: .75rem;
+    font-weight: bold;
+    margin-bottom: 5px;
   }
 
   .text-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .text-section p {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
   }
+
+  /* Section 2: Service */
 
   .service-info-title,
   .service-times-title {
     font-size: 1.2rem;
   }
 
+  .service-info-card {
+    height: 500px;
+  }
+
+  /* Section 3: About */
+
   .section-title {
     font-size: 1.2rem;
   }
+
+  .left-image,
+  .right-image {
+  width: 300px;
+
+}
+
+  /* Section 4: Books & Section 5: Message */ 
 
   .books-section h2,
   .latest-message h2 {
@@ -814,6 +856,9 @@ footer {
   }
 
   #latest-video iframe {
-    height: 150px;
+    height: 195px;
   }
+
+  /* FOOTER */
+  
 }

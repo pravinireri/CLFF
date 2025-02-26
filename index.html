@@ -191,7 +191,7 @@
                 </div>
             </div>
         
-            <!-- Duplicate Books for Seamless Loop -->
+            <!-- Duplicate Books for Loop -->
             <div class="flip-card">
                 <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -280,23 +280,35 @@
         </section>
 
     </main>
-    <!-- Footer -->
+
+    <!-- FOOTER -->
     <footer>
         <div class="footer-content" id="contact-section">
             <div class="footer-logo">
-                <h3>Christ’s Love Family Fellowship Church, Ngoingwa</h3>
-                <p>Where everybody is somebody and Jesus Christ is Lord.</p>
+                <div>
+                    <h3>Christ’s Love Family Fellowship Church, Ngoingwa</h3>
+                    <p>Where everybody is somebody and Jesus Christ is Lord.</p>
+                </div>
             </div>
             <div class="footer-social">
-                <a href="https://www.facebook.com/share/1BgnexqFFo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://youtube.com/@c.l.f.f.ngoingwa?si=0pZknMUGQO6CQ3dL" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://www.tiktok.com/@clffngoingwa?_t=ZM-8u2uzhg5ZLB&_r=1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/share/1BgnexqFFo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://youtube.com/@c.l.f.f.ngoingwa?si=0pZknMUGQO6CQ3dL" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/@clffngoingwa?_t=ZM-8u2uzhg5ZLB&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; <span id="year"></span> CLFF. Made by <a href="https://github.com/pravinireri/" target="_blank">Pravin Ireri</a></p>
         </div>
     </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

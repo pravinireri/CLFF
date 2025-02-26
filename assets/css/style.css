@@ -561,21 +561,29 @@ footer {
   padding-top: 20px;
   font-size: 0.9rem;
   color: var(--gray-color);
+  padding: 20px 10px 0;
 }
 
 .footer-bottom a {
   color: var(--blue-color);
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-  .container {
-    padding: 80px 50px;
+  .text-section h2 {
+    font-size: 2.5rem;
   }
 
-  .text-section h2 {
-    font-size: 3rem;
+  .image-section img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
 
   .service-info-title,
@@ -648,11 +656,26 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
-  }
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .logo {
+      font-size: 24px;
+    }
+    
+    .menu a {
+      display: none;
+    }
+  
+    .social-icons a {
+      font-size: 18px;
+      margin: 0 auto;
+      margin-top: -10px;
+      margin-right: 6px;
+    }
 
   .menu {
     flex-direction: column;
@@ -697,6 +720,10 @@ footer {
     padding: 20px;
   }
 
+  .service-info-card {
+    height: 580px;
+  }
+
   .service-info-title,
   .service-times-title {
     font-size: 1.8rem;
@@ -732,11 +759,40 @@ footer {
   #latest-video iframe {
     height: 250px;
   }
+
+    /* FOOTER */
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+  }
+  .footer-logo p {
+      text-align: center;
+  }
+  .footer-social {
+      margin-top: 20px;
+  }
 }
 
 @media (max-width: 576px) {
+    /* NAVBAR */
   .navbar {
-    padding: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+  
+  .menu a {
+    display: none;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+    margin: 0 auto;
+    margin-top: -10px;
+    margin-right: 6px;
   }
 
   .logo {
@@ -764,7 +820,7 @@ footer {
   }
 
   .text-section p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .join-button {
@@ -778,6 +834,10 @@ footer {
   .service-info-card,
   .service-times-card {
     padding: 15px;
+  }
+
+  .service-info-card {
+    height: 520px;
   }
 
   .service-info-title,
@@ -819,6 +879,18 @@ footer {
 
   #latest-video iframe {
     height: 200px;
+  }
+
+    /* FOOTER */
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+  }
+  .footer-logo p {
+      text-align: center;
+  }
+  .footer-social {
+      margin-top: 20px;
   }
 }
 
@@ -900,6 +972,14 @@ footer {
   }
 
   /* FOOTER */
-  
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+  }
+  .footer-logo p {
+      text-align: center;
+  }
+  .footer-social {
+      margin-top: 20px;
+  }
 }
-

@@ -1021,14 +1021,6 @@ img {
   color: white;
 }
 
-.heart-icon {
-  display: inline-block;
-  color: var(--church-500);
-  width: 0.75rem;
-  height: 0.75rem;
-  vertical-align: middle;
-}
-
 /* Animations */
 @keyframes fadeIn {
   from {

@@ -1,9 +1,12 @@
 :root {
-  --background-color: #1a1a1a;
-  --text-color: #ffffff;
-  --off-white: #f9f9f9;
-  --blue-color: #0080FF;
-  --gray-color: #e0e0e0;
+  --church-600: #2563eb;
+  --church-700: #1d4ed8;
+  --light: #f8fafc;
+  --dark: #1e293b;
+  --muted-foreground: #64748b;
+  --radius: 12px;
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
 
   --background: hsl(210 50% 98%);
   --foreground: hsl(222 47% 11%);
@@ -39,38 +42,30 @@
   --font-display: 'Rajdhani', 'Poppins', sans-serif;
 }
 
-/* Base Styles */
-* {
+/* General Styles */
+body {
+  font-family: var(--font-body);
+  color: var(--dark);
+  background-color: white;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  border-color: var(--border);
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
 }
 
-body {
-  background-color: var(--light);
-  color: var(--dark);
-  font-family: var(--font-sans);
-  overflow-x: hidden;
+p {
+  color: var(--muted-foreground);
   line-height: 1.6;
-  text-rendering: optimizeLegibility;
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 
 /* Navbar */
 .navbar {
@@ -210,147 +205,271 @@ img {
   color: var(--church-600);
 }
 
-/* Content */
-
-.landing-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #ffffff, #f5f5f5);
-    padding: 30px;
-    text-align: center;
-    position: relative;
-    margin-top: 80px;
+/* Hero Section */
+.download-hero {
+  padding: 6rem 1rem;
+  padding-top: 200px;
+  background: linear-gradient(135deg, var(--light) 0%, var(--church-600) 100%);
+  text-align: center;
 }
 
-.landing-section .content {
-    max-width: 600px;
-    position: relative;
-    z-index: 10;
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-.landing-section .headline {
-  font-size: 3rem;
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--muted-foreground);
+  margin-bottom: 2rem;
+}
+
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--church-600);
+  color: white;
+  border-radius: var(--radius);
   font-weight: 600;
-  margin-bottom: 20px;
-  color: #333;
+  transition: background-color 0.3s;
 }
 
-.landing-section .description {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 40px;
-  line-height: 1.6;
+.download-btn:hover {
+  background-color: var(--church-700);
 }
 
-.steps {
-    margin-bottom: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.platform-note {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
 }
 
-.step {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-image img {
+  max-width: 70%;
+  height: auto;
+  border-radius: var(--radius);
 }
 
-.step:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+/* Features Section */
+.features-section {
+  padding: 4rem 1rem;
+  background-color: white;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--muted-foreground);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: var(--light);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: var(--church-600);
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: var(--muted-foreground);
+}
+
+/* How It Works Section */
+.how-it-works {
+  padding: 4rem 1rem;
+  background-color: var(--light);
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step-item {
+  text-align: center;
 }
 
 .step-number {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #007BFF;
-    margin-right: 15px;
+  font-size: 2rem;
+  color: var(--church-600);
+  margin-bottom: 1rem;
 }
 
-.step-text {
-    font-size: 1.1rem;
-    color: #555;
+.step-content h3 {
+  font-size: 1.25rem;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
 }
 
-/* Button */
-.download-button {
-    padding: 14px 35px;
-    background-color: #007BFF;
-    color: #fff;
-    font-weight: 600;
-    border-radius: 50px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.step-content p {
+  font-size: 1rem;
+  color: var(--muted-foreground);
 }
 
-.download-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+.action-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--church-600);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--church-700);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--church-600);
+  color: var(--church-600);
+}
+
+.btn-secondary:hover {
+  background-color: var(--church-600);
+  color: white;
 }
 
 /* Footer */
-footer {
-  padding: 40px 30px;
-  background-color: var(--background-color);
-  color: #fff;
+.footer {
+  padding: 2rem 1rem;
+  background-color: var(--dark);
+  color: white;
   text-align: center;
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-logo h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+.footer-info {
+  margin-bottom: 1rem;
 }
 
-.footer-logo p {
+.footer-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-subtitle {
   font-size: 1rem;
-  color: var(--gray-color);
-  text-align: left;
+  color: var(--muted-foreground);
 }
 
 .footer-social {
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .footer-social a {
-  color: #fff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.footer-social a:hover {
-  color: var(--blue-color);
+  color: white;
+  font-size: 1.25rem;
 }
 
 .footer-bottom {
-  padding-top: 20px;
-  font-size: 0.9rem;
-  color: var(--gray-color);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
 }
 
-.footer-bottom a {
-  color: var(--blue-color);
-  font-weight: 600;
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .cta-container {
+    align-items: flex-start;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .final-cta h2 {
+    font-size: 2.5rem;
+  }
 }

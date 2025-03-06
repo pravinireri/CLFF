@@ -8,29 +8,66 @@
     <link rel="shortcut icon" href="../images/clff-logo.png" type="image/svg+xml">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">
-          <a href="../../index.html" style="color: black;">
-            CLFF
-          </a>
+          <a href="../../index.html">CLFF</a>
         </div>
         <nav class="menu">
-            <a href="../../index.html">Home</a>
-            <a href="#">About</a>
-            <a href="#">Locations</a>
-            <a href="#">Events</a>
-            <a href="#">Giving</a>
-            <a href="#">Contact</a>
+            <a href="../../index.html" class="menu-item">Home</a>
+            <a href="#services" class="menu-item">Locations</a>
+            <a href="#about" class="menu-item">About</a>
+            <a href="#institutions" class="menu-item">Institutions</a>
+            <a href="#books" class="menu-item">Books</a>
+            <a href="#message" class="menu-item">Message</a>
+            <a href="#contact" class="menu-item">Contact</a>
         </nav>
         <div class="social-icons">
-            <a href="https://www.facebook.com/share/1BgnexqFFo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://youtube.com/@c.l.f.f.ngoingwa?si=0pZknMUGQO6CQ3dL" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@clffngoingwa?_t=ZM-8u2uzhg5ZLB&_r=1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1BgnexqFFo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="facebook"></i>
+            </a>
+            <a href="https://youtube.com/@c.l.f.f.ngoingwa?si=0pZknMUGQO6CQ3dL" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="youtube"></i>
+            </a>
+            <a href="https://www.tiktok.com/@clffngoingwa?_t=ZM-8u2uzhg5ZLB&_r=1" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                </svg>
+            </a>
         </div>
+        <button class="mobile-menu-button" aria-label="Toggle Menu">
+            <i data-lucide="menu"></i>
+        </button>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-container">
+            <a href="../../index.html" class="mobile-menu-item">Home</a>
+            <a href="#services" class="mobile-menu-item">Locations</a>
+            <a href="#about" class="mobile-menu-item">About</a>
+            <a href="#books" class="mobile-menu-item">Books</a>
+            <a href="#message" class="mobile-menu-item">Message</a>
+            <a href="#contact" class="mobile-menu-item">Contact</a>
+            
+            <div class="mobile-social-icons">
+                <a href="https://www.facebook.com/share/1BgnexqFFo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+                    <i data-lucide="facebook"></i>
+                </a>
+                <a href="https://youtube.com/@c.l.f.f.ngoingwa?si=0pZknMUGQO6CQ3dL" target="_blank" rel="noopener noreferrer">
+                    <i data-lucide="youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/@clffngoingwa?_t=ZM-8u2uzhg5ZLB&_r=1" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- LANDING PAGE CONTENT -->
     <section class="landing-section">
@@ -61,22 +98,34 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-      <div class="footer-content">
-          <div class="footer-logo">
-              <h3>Christ’s Love Family Fellowship Church, Ngoingwa</h3>
-              <p>Where everybody is somebody and Jesus Christ is Lord.</p>
-          </div>
-          <div class="footer-social">
-              <a href="https://www.facebook.com/share/1BgnexqFFo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
-              <a href="https://youtube.com/@c.l.f.f.ngoingwa?si=0pZknMUGQO6CQ3dL" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
-              <a href="https://www.tiktok.com/@clffngoingwa?_t=ZM-8u2uzhg5ZLB&_r=1" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
-          </div>
-      </div>
-      <div class="footer-bottom">
-          <p>&copy; <span id="year"></span> CLFF. Made by <a href="https://github.com/pravinireri/" target="_blank">Pravin Ireri</a></p>
-      </div>
-  </footer>
+    <footer id="contact" class="footer">
+        <div class="content-wrapper">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 class="footer-title">Christ's Love Family Fellowship Church, Ngoingwa</h3>
+                    <p class="footer-subtitle">Where everybody is somebody and Jesus Christ is Lord.</p>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1BgnexqFFo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="facebook"></i>
+                    </a>
+                    <a href="https://youtube.com/@c.l.f.f.ngoingwa?si=0pZknMUGQO6CQ3dL" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@clffngoingwa?_t=ZM-8u2uzhg5ZLB&_r=1" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> CLFF. Made by <a href="https://github.com/pravinireri/" target="_blank" rel="noopener noreferrer">Pravin Ireri</a></p>
+            </div>
+        </div>
+    </footer>
   <script src="../js/script.js"></script>
 </body>
 </html>

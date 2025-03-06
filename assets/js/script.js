@@ -1,23 +1,71 @@
-// Smooth scrolling for navbar links
-document.querySelectorAll('.menu a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+// Initialize Lucide icons
+document.addEventListener('DOMContentLoaded', () => {
+  lucide.createIcons();
+  
+  // Set current year in footer
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+  
+  // Mobile menu toggle
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
+  
+  // Navbar background on scroll
+  const navbar = document.querySelector('.navbar');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
   });
-});
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        mobileMenu.classList.remove('active');
+      }
+    });
+  });
+  
+  // Books carousel navigation
+  const booksContainer = document.getElementById('books-container');
+  const prevButton = document.getElementById('prev-btn');
+  const nextButton = document.getElementById('next-btn');
+  
+  if (booksContainer && prevButton && nextButton) {
+    prevButton.addEventListener('click', () => {
+      booksContainer.scrollBy({
+        left: -300,
+        behavior: 'smooth'
+      });
+    });
+    
+    nextButton.addEventListener('click', () => {
+      booksContainer.scrollBy({
+        left: 300,
+        behavior: 'smooth'
+      });
+    });
+  }
 
-// Copyright Year
-document.getElementById("year").textContent = new Date().getFullYear();
-
-// Latest Video
+  // Latest Video
 const channelId = 'UCRuGL0Y3BNP1DlcW_TWgGOQ';
 const apiKey = 'AIzaSyA1rRSuwkQ2nP7XFQptMQh2kZG86orPZyU';
 
@@ -41,14 +89,22 @@ async function fetchLatestVideo() {
 }
 
 window.onload = fetchLatestVideo;
-
-/* Book Animation */
-const booksGrid = document.querySelector('.books-grid');
-
-booksGrid.addEventListener('mouseenter', () => {
-  booksGrid.style.animationPlayState = 'paused';
-});
-
-booksGrid.addEventListener('mouseleave', () => {
-  booksGrid.style.animationPlayState = 'running';
+  
+  // Video player functionality
+  const videoOverlay = document.querySelector('.video-overlay');
+  const playButton = document.querySelector('.play-button');
+  const videoFrame = document.getElementById('video-frame');
+  
+  if (playButton && videoOverlay && videoFrame) {
+    playButton.addEventListener('click', () => {
+      // Update video src to autoplay
+      const videoSrc = videoFrame.src;
+      videoFrame.src = videoSrc.includes('?') 
+        ? videoSrc.replace('?controls=0', '?autoplay=1&controls=1') 
+        : videoSrc + '?autoplay=1&controls=1';
+      
+      // Hide overlay
+      videoOverlay.classList.add('hidden');
+    });
+  }
 });

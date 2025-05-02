@@ -19,6 +19,11 @@
   --input: hsl(214 32% 91%);
   --ring: hsl(214, 100%, 50%);
   --radius: 1rem;
+
+  --church-dark: #1A1F2C;
+  --church-blue: #3B82F6;
+  --church-accent: #F97316;
+  --church-light: #F8FAFC;
   
   --dark: hsl(222 47% 11%);
   --light: hsl(210 50% 98%);
@@ -214,17 +219,24 @@ img {
 }
 
 .navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   padding: 0.5rem 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled .logo,
+.navbar.scrolled .menu-item,
+.navbar.scrolled .social-icons a,
+.navbar.scrolled .mobile-menu-button {
+  color: var(--dark);
 }
 
 .logo {
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--dark);
+  color: var(--light);
   transition: color 300ms;
 }
 
@@ -244,7 +256,7 @@ img {
 }
 
 .menu-item {
-  color: var(--dark);
+  color: var(--light);
   transition: color 300ms;
   font-weight: 500;
 }
@@ -265,7 +277,7 @@ img {
 }
 
 .social-icons a {
-  color: var(--dark);
+  color: var(--light);
   transition: color 300ms;
 }
 
@@ -277,7 +289,7 @@ img {
   display: block;
   background: none;
   border: none;
-  color: var(--dark);
+  color: var(--light);
   cursor: pointer;
 }
 
@@ -337,95 +349,285 @@ img {
 }
 
 /* Hero Section */
+
 .hero-section {
-  padding-top: 6rem;
-  padding-bottom: 4rem;
-  background-color: var(--light);
+  position: relative;
+  min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, var(--church-dark), var(--church-blue));
+  opacity: 0.8;
+}
+
+.hero-content-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 6rem 1rem 4rem;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
-}
-
-@media (min-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .hero-text {
-  opacity: 0;
-  transform: translateY(2rem);
-  animation: fadeUp 1s forwards;
-  animation-delay: 300ms;
+  text-align: center;
+  order: 1;
+  padding: 0 1rem;
 }
 
 .hero-subtitle {
-  font-weight: 300;
-  font-size: 1.125rem;
+  font-size: 1rem;
   margin-bottom: 0.75rem;
-  color: var(--dark);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  text-transform: uppercase;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  font-size: 2.25rem;
   line-height: 1.2;
-  color: var(--dark);
-}
-
-@media (min-width: 768px) {
-  .hero-title {
-    font-size: 3.5rem;
-  }
+  margin-bottom: 1.25rem;
+  color: white;
+  text-transform: uppercase;
 }
 
 .hero-tagline {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 2rem;
-  color: var(--muted-foreground);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
+  width: 100%;
+}
+
+.hero-tagline p {
+  margin: 0 12px;
+  white-space: nowrap;
+}
+
+.vertical-divider {
+  display: inline-block;
+  width: 1px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
 }
 
 .hero-image {
-  opacity: 0;
-  transform: translateX(2rem);
-  animation: fadeRight 1s forwards;
-  animation-delay: 600ms;
+  position: relative;
+  margin: 0 auto;
+  max-width: 500px;
+  padding-bottom: 4rem;
 }
 
 .image-container {
   position: relative;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: visible;
 }
 
 .bishop-image {
   width: 100%;
+  display: block;
   border-radius: var(--radius);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  object-fit: cover;
 }
 
 .glass-card {
   position: absolute;
-  bottom: -1.5rem;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
+  width: calc(100% - 2rem);
+  max-width: 350px;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0.75rem;
   padding: 1rem;
   text-align: center;
-  width: 80%;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.glass-card .card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.glass-card .card-subtitle {
+  font-size: 0.8rem;
+  color: var(--church-600);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .hero-content-container {
+    padding: 8rem 2rem 6rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .hero-text {
+    text-align: left;
+    padding: 0;
+  }
+
+  .hero-tagline {
+    justify-content: flex-start;
+  }
+
+  .hero-image {
+    padding-bottom: 5rem;
+  }
+
+  .glass-card {
+    width: 90%;
+    max-width: 380px;
+  }
+}
+
+/* Desktop (992px+) */
+@media (min-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .hero-text {
+    order: 0;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-image {
+    padding-bottom: 0;
+    margin-bottom: 3rem;
+  }
+
+  .glass-card {
+    bottom: -2rem;
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .glass-card {
+    max-width: 420px;
+  }
+}
+
+/* Mobile Landscape & Short Screens */
+@media (max-height: 700px) and (min-width: 992px) {
+  .hero-image {
+    margin-bottom: 4rem;
+  }
+  
+  .glass-card {
+    bottom: -2.5rem;
+  }
+}
+
+/* Small Mobile Devices (<480px) */
+@media (max-width: 480px) {
+  .hero-tagline {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  
+  .hero-tagline p {
+    white-space: normal;
+    text-align: center;
+    padding: 0 8px;
+    font-size: 0.9rem;
+  }
+  
+  .vertical-divider {
+    height: 18px;
+  }
+}
+
+/* Very Small Devices (<350px) */
+@media (max-width: 350px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.875rem;
+  }
+  
+  .hero-tagline p {
+    font-size: 0.8rem;
+  }
+  
+  .glass-card {
+    padding: 0.75rem;
+    width: 95%;
+  }
+  
+  .glass-card .card-title {
+    font-size: 1rem;
+  }
+  
+  .glass-card .card-subtitle {
+    font-size: 0.75rem;
+  }
 }
 
 /* Service Section */
@@ -589,16 +791,39 @@ img {
   animation-name: fadeRight;
 }
 
+.glass-card2 {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+  width: 80%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
 .image-wrapper {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
   transition: transform 500ms, box-shadow 500ms;
+  padding-bottom: 4rem;
+  height: auto;
 }
 
 .image-wrapper:hover {
   transform: scale(1.05);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /*box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);*/
 }
 
 .image-wrapper img {
@@ -1143,4 +1368,84 @@ img {
   .church-image {
     height: 12rem;
   }
+}
+
+
+/* Church Info Card - Refined Modern Design */
+.church-info-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.church-info-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.church-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.church-card-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--dark);
+  text-align: center;
+  padding: 2rem 2rem 1rem;
+  margin: 0;
+}
+
+.divider {
+  width: 80%;
+  height: 1px;
+  background-color: var(--border);
+  margin: 0 auto 1.5rem;
+}
+
+.church-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 2rem 1.5rem;
+  color: var(--church-600);
+  font-weight: 500;
+}
+
+.church-location i {
+  width: 18px;
+  height: 18px;
+}
+
+.church-image-container {
+  position: relative;
+  flex-grow: 1;
+  min-height: 250px;
+}
+
+.church-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%);
+}
+
+/* Hover effect for image */
+.church-info-card:hover .church-image-container img {
+  transform: scale(1.03);
 }

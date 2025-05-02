@@ -72,34 +72,47 @@
     </div>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="content-wrapper">
-                <div class="hero-grid">
-                    <div class="hero-text">
-                        <h1 class="hero-subtitle">Where Everybody Is Somebody and Jesus Christ Is Lord</h1>
-                        <h2 class="hero-title">Christ's Love Family Fellowship Church</h2>
-                        <div class="hero-tagline">
-                            <span class="vertical-divider"></span>
-                            <p>Reaching the world with the Gospel of Jesus Christ</p>
-                            <span class="vertical-divider"></span>
-                        </div>
-                        <a href="#services" class="btn-primary">Join Us</a>
-                    </div>
-                    
-                    <div class="hero-image">
-                        <div class="image-container">
-                            <img src="assets/images/bishop-hero.png" alt="Bishop Dr. George Kamau Gichigi" class="bishop-image">
-                            <div class="glass-card">
-                                <h4 class="card-title">Bishop Dr. George Kamau</h4>
-                                <p class="card-subtitle">Lead Bishop & Chairman</p>
-                                <p class="card-subtitle">Christ's Love Family Fellowship Ministry</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- Hero Section -->
+<div class="hero-section">
+    <!-- Video Background -->
+    <div class="video-background">
+      <video autoplay muted loop class="hero-video">
+        <source src="DJI_0128.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <!-- Dark overlay -->
+      <div class="video-overlay"></div>
+    </div>
+  
+    <!-- Hero Content -->
+    <div class="hero-content-container">
+      <div class="hero-grid">
+        <!-- Hero Text -->
+        <div class="hero-text">
+          <h1 class="hero-subtitle">Where Everybody Is Somebody and Jesus Christ Is Lord</h1>
+          <h2 class="hero-title">Christ's Love Family Fellowship Church</h2>
+          <div class="hero-tagline">
+            <span class="vertical-divider"></span>
+            <p>Reaching the world with the Gospel of Jesus Christ</p>
+            <span class="vertical-divider"></span>
+          </div>
+          <a href="#services" class="btn-primary">Join Us</a>
+        </div>
+  
+        <!-- Hero Image -->
+        <div class="hero-image">
+          <div class="image-container">
+            <img src="assets/images/new-bishop-hero.png" alt="Bishop Dr. George Kamau Gichigi" class="bishop-image">
+            <div class="glass-card">
+              <h4 class="card-title">Bishop Dr. George Kamau</h4>
+              <p class="card-subtitle">Lead Bishop & Chairman</p>
+              <p class="card-subtitle">Christ's Love Family Fellowship Ministry</p>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
         <!-- Service Info Section -->
         <section id="services" class="service-section">
@@ -107,21 +120,22 @@
                 <div class="service-grid">
                     <!-- Church Info Card -->
                     <div class="church-info-card">
-                        <div class="card-content">
-                            <h2 class="card-title">A Church Serving the Body of Christ</h2>
-                            
-                            <div class="location-info">
-                                <i data-lucide="map-pin"></i>
-                                <p>Ngoingwa, Thika, Kenya</p>
-                            </div>
-                            
-                            <div class="divider"></div>
-                            
-                            <div class="church-image">
-                                <img src="assets/images/church.jpg" alt="Christ's Love Family Fellowship Church">
-                            </div>
+                        <div class="church-card-content">
+                          <h2 class="church-card-title">A Church Serving<br>the Body of Christ</h2>
+                          
+                          <div class="divider"></div>
+                          
+                          <div class="church-location">
+                            <i data-lucide="map-pin"></i>
+                            <p>Ngoingwa, Thika, Kenya</p>
+                          </div>
+                          
+                          <div class="church-image-container">
+                            <img src="assets/images/church.jpg" alt="Christ's Love Family Fellowship Church">
+                            <div class="image-overlay"></div>
+                          </div>
                         </div>
-                    </div>
+                      </div>
                     
                     <!-- Service Times Card -->
                     <div class="service-times-card">
@@ -201,7 +215,7 @@
                     <div class="bishop-image-container">
                         <div class="image-wrapper">
                             <img src="assets/images/bishop-left.png" alt="Bishop Dr. George Kamau">
-                            <div class="glass-card">
+                            <div class="glass-card2">
                                 <h4 class="card-title">Bishop Dr. George Kamau</h4>
                                 <p class="card-subtitle">Bishop</p>
                             </div>
@@ -229,8 +243,8 @@
                     <!-- Wife Image -->
                     <div class="wife-image-container">
                         <div class="image-wrapper">
-                            <img src="assets/images/reverend-right.png" alt="Reverend Dr. Grace Kamau">
-                            <div class="glass-card">
+                            <img src="assets/images/new-reverend-right.png" alt="Reverend Dr. Grace Kamau">
+                            <div class="glass-card2">
                                 <h4 class="card-title">Reverend Dr. Grace Kamau</h4>
                                 <p class="card-subtitle">Wife to Bishop Dr. Kamau</p>
                             </div>
@@ -256,7 +270,7 @@
                     <!-- School Card -->
                     <div class="institution-card">
                         <div class="institution-image">
-                            <img src="https://via.placeholder.com/400x300" alt="Bishop Kanyiri Academy">
+                            <img src="assets/images/kanyiri-academy.png" alt="Bishop Kanyiri Academy">
                         </div>
                         
                         <div class="institution-content">
@@ -453,15 +467,9 @@
                 </div>
                 
                 <div class="video-container">
-                    <div class="video-overlay">
-                        <button class="play-button">
-                            <i data-lucide="play"></i>
-                        </button>
-                    </div>
-                    
                     <iframe 
                         id="video-frame" 
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=1" 
                         title="Latest Church Message" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -470,6 +478,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->

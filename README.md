@@ -1,30 +1,64 @@
-# CLFF Official Website
+# Christ's Love Family Fellowship Church Website
 
-Welcome to the official website of Christian Life Family Fellowship (CLFF), a place where you can grow in faith, community, and service. This website is a work in progress but aims to provide information on our church, services, events, and opportunities to connect with us.
+[![Live Website](https://img.shields.io/badge/Visit-Live_Website-blue?style=for-the-badge&logo=google-chrome)](https://pravinireri.github.io/CLFF/)
+[![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-blueviolet?style=for-the-badge&logo=github)](https://pages.github.com)
 
-## Project Overview
+> Official website for Christ's Love Family Fellowship Church (CLFF) in Ngoingwa, Thika, Kenya
 
-This is the official website for CLFF, created by Pravin Ireri. The site is designed with a modern, clean, and user-friendly layout to provide visitors with easy access to church information and resources. The website is responsive and optimized for different screen sizes.
+![Website Screenshot](assets/images/church.jpg)
+
+## Table of Contents
+- [Live Website](#live-website)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Customization Guide](#customization-guide)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Live Website
+The website is currently hosted on GitHub Pages:  
+🌐 [https://pravinireri.github.io/CLFF/](https://pravinireri.github.io/CLFF/)
 
 ## Features
 
-- **Navigation Menu**: Easy access to different sections such as Home, About, Locations, Events, Giving, and Contact.
-- **Social Media Integration**: Quick links to our Facebook, YouTube, and TikTok pages to stay connected with the latest updates.
-- **Hero Section**: A welcoming introduction to CLFF with a call-to-action to join us.
-- **Card Section**: Easy access to important sections like planning a visit, joining a group, or watching services online.
-- **Responsive Design**: The site adapts to different screen sizes and devices, ensuring a great experience on both desktop and mobile.
+### ✨ Core Features
+- **Mobile-First Design**: Fully responsive across all devices
+- **Modern UI Elements**:
+  - Video background hero section
+  - Glass morphism cards
+  - Smooth animations
+- **Dynamic Content**:
+  - Interactive book carousel
+  - YouTube video integration
+  - Service time schedules
 
-## Technologies Used
+### 📌 Page Sections
+| Section | Description |
+|---------|-------------|
+| **Home** | Video background with church tagline |
+| **Services** | Detailed worship schedule and locations |
+| **About** | Church leadership and mission |
+| **Institutions** | Bishop Kanyiri Academy and UHAI College |
+| **Books** | Flip-through book display |
+| **Message** | Latest sermon videos |
 
-- **HTML5**: Used for the structure of the website.
-- **CSS3**: For styling the website, including modern design techniques like flexbox, grid, and animations.
-- **Font Awesome**: For icons such as social media buttons.
-- **Google Fonts**: For custom fonts that enhance the readability and design of the site.
+## Technology Stack
 
-## Installation & Setup
+### Frontend Technologies
+| Technology | Usage |
+|------------|-------|
+| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) | Page structure |
+| ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) | Styling and animations |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black) | Interactive elements |
+| ![Lucide Icons](https://img.shields.io/badge/Lucide_Icons-333333?logo=open-source-initiative) | Modern icon set |
 
-To run this project locally:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/pravinireri/clff.git
+### Design Features
+- **Color Scheme**:
+  ```css
+  :root {
+    --church-dark: #1A1F2C;
+    --church-blue: #3B82F6;
+    --church-accent: #F97316;
+  }

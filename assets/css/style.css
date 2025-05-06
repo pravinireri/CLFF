@@ -365,18 +365,20 @@ img {
   width: 100%;
   height: 100%;
   z-index: 0;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  overflow: hidden;
 }
 
 .hero-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .video-overlay {
@@ -855,6 +857,103 @@ img {
   color: var(--muted-foreground);
 }
 
+/* Tablet and Desktop Styles */
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+  }
+  
+  .image-wrapper {
+    margin-bottom: 0;
+  }
+}
+
+/* Mobile Image Adjustments */
+@media (max-width: 767px) {
+  .about-grid {
+    gap: 3rem;
+  }
+  
+  .bishop-image-container, 
+  .wife-image-container {
+    margin-top: 1.5rem;
+  }
+  
+  .image-wrapper img {
+    height: 26rem;
+    object-position: center 25%;
+  }
+  
+  .glass-card {
+    bottom: -1rem;
+    width: 90%;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  .image-wrapper img {
+    height: 24rem;
+    object-position: center 20%;
+  }
+  
+  .glass-card {
+    padding: 0.75rem;
+  }
+  
+  .glass-card .card-title {
+    font-size: 1rem;
+  }
+  
+  .glass-card .card-subtitle {
+    font-size: 0.75rem;
+  }
+}
+
+/* Animation Styles */
+.bishop-image-container {
+  opacity: 0;
+  transform: translateX(-2rem);
+  animation: fadeLeft 1s forwards;
+  animation-delay: 300ms;
+}
+
+.wife-image-container {
+  opacity: 0;
+  transform: translateX(2rem);
+  animation: fadeRight 1s forwards;
+  animation-delay: 300ms;
+}
+
+.about-content {
+  opacity: 0;
+  transform: translateY(2rem);
+  animation: fadeUp 1s forwards;
+  animation-delay: 600ms;
+}
+
+@keyframes fadeLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Institutions Section */
 .institutions-section {
   padding: 4rem 0;
@@ -1172,6 +1271,8 @@ img {
   width: 100%;
   height: 100%;
   border: none;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 /* Footer */

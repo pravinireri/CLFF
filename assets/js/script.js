@@ -199,3 +199,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+/* Hero Loop */
+document.addEventListener('DOMContentLoaded', function() {
+  const heroVideo = document.querySelector('.hero-video');
+  
+  // Ensure video loops (fallback for some browsers)
+  if(heroVideo) {
+    heroVideo.addEventListener('ended', function() {
+      this.currentTime = 0;
+      this.play();
+    }, false);
+    
+    // Safari requires this for proper looping
+    heroVideo.setAttribute('loop', '');
+  }
+});

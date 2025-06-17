@@ -215,3 +215,140 @@ document.addEventListener('DOMContentLoaded', function() {
     heroVideo.setAttribute('loop', '');
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Modal elements
+  const modal = document.getElementById('join-modal');
+  const modalOverlay = modal.querySelector('.modal-overlay');
+  const modalClose = modal.querySelector('.modal-close');
+  const joinButton = document.querySelector('.btn-primary'); // The existing "Join Us" button
+  const body = document.body;
+
+  // Store the last focused element for accessibility
+  let lastFocusedElement = null;
+
+  // Open modal function
+  function openModal() {
+    lastFocusedElement = document.activeElement;
+    modal.classList.add('active');
+    body.classList.add('modal-open');
+    modal.setAttribute('aria-hidden', 'false');
+    
+    // Focus the close button for accessibility
+    setTimeout(() => {
+      modalClose.focus();
+    }, 100);
+    
+    // Trap focus within modal
+    trapFocus();
+  }
+
+  // Close modal function
+  function closeModal() {
+    modal.classList.remove('active');
+    body.classList.remove('modal-open');
+    modal.setAttribute('aria-hidden', 'true');
+    
+    // Return focus to the last focused element
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
+    
+    // Remove focus trap
+    removeFocusTrap();
+  }
+
+  // Focus trap functionality for accessibility
+  let focusableElements = [];
+  let firstFocusableElement = null;
+  let lastFocusableElement = null;
+
+  function trapFocus() {
+    focusableElements = modal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    firstFocusableElement = focusableElements[0];
+    lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+    modal.addEventListener('keydown', handleTabKey);
+  }
+
+  function removeFocusTrap() {
+    modal.removeEventListener('keydown', handleTabKey);
+  }
+
+  function handleTabKey(e) {
+    if (e.key !== 'Tab') return;
+
+    if (e.shiftKey) {
+      // Shift + Tab
+      if (document.activeElement === firstFocusableElement) {
+        e.preventDefault();
+        lastFocusableElement.focus();
+      }
+    } else {
+      // Tab
+      if (document.activeElement === lastFocusableElement) {
+        e.preventDefault();
+        firstFocusableElement.focus();
+      }
+    }
+  }
+
+  // Event listeners
+  if (joinButton) {
+    joinButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  }
+
+  // Close modal when clicking overlay
+  modalOverlay.addEventListener('click', closeModal);
+
+  // Close modal when clicking close button
+  modalClose.addEventListener('click', closeModal);
+
+  // Close modal with ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // Touch support for mobile devices
+  let touchStartY = 0;
+  
+  modal.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  modal.addEventListener('touchmove', (e) => {
+    const touchY = e.touches[0].clientY;
+    const touchDiff = touchStartY - touchY;
+    
+    // Close modal if swiping down significantly
+    if (touchDiff < -100) {
+      closeModal();
+    }
+  }, { passive: true });
+
+  // Prevent image context menu on long press (mobile)
+  const modalImage = modal.querySelector('.modal-image');
+  modalImage.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+  });
+
+  // Handle window resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (modal.classList.contains('active')) {
+        // Recalculate modal positioning if needed
+        const modalContent = modal.querySelector('.modal-content');
+        modalContent.style.transform = 'scale(1) translateY(0)';
+      }
+    }, 100);
+  });
+});
